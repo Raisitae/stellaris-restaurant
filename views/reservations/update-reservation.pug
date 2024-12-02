@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/styles.css")
+
+  body
+    block content
+      .container
+        .card
+          h1 Modificar Reserva
+          form(action=`/reservations/updated-reservation/${reservation._id}`, method="POST") 
+            // ID: no editable
+            p
+              strong ID: 
+              | #{reservation._id}
+            // Campos editables
+            div
+              label(for="last_name") Apellido
+              input(type="text", name="last_name", id="last_name", value=reservation.last_name, required)
+            div
+              label(for="date") Fecha
+              input(type="date", name="date", id="date", value=reservation.date, required)
+            div
+              label(for="hour") Hora
+              input(type="time", name="hour", id="hour", value=reservation.hour, required)
+            div
+              label(for="guests") Huéspedes
+              input(type="number", name="guests", id="guests", value=reservation.guests, required)
+            div
+              label(for="status") Estado
+              select(name="status", id="status", required)
+                option(value="0", selected=reservation.status === 0) No confirmada
+                option(value="1", selected=reservation.status === 1) Confirmada
+                option(value="2", selected=reservation.status === 2) Cancelada
+            div
+              button(type="submit") Guardar Cambios

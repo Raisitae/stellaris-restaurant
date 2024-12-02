@@ -1,0 +1,14 @@
+extends layouts/main
+
+block content
+  .container
+    .card
+      h1 Bienvenido al Sistema de Reservas
+      p Stellaris es un restaurante que ofrece una experiencia gastronómica única. 
+      p Para hacer o gestionar su reserva, por favor inicie sesión en su cuenta.
+      
+      // Botón de inicio de sesión
+      a.btn(href='/login') Iniciar sesión
+      div
+      a.btn(href='/login/signup') Registrarse
+

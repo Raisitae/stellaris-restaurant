@@ -1,0 +1,12 @@
+extends ../layouts/main
+
+block content
+  .container-dashboard
+    h1 Bienvenido, Admin!
+    p Estas son las opciones que puede realizar desde su perfil:
+
+    .buttons
+      a.btn(href='/reservations/new') Hacer una reserva
+      a.btn(href='/reservations/client-last-name') Buscar reserva por apellido
+      a.btn(href='/reservations/all-reservations') Generar reporte de todas las reservas
+      a.btn(href='/tables/all-tables') Gestionar mesas

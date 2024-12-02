@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/styles.css")
+  
+  body
+    block content
+      h1 Todas las Mesas
+      .table-container
+        table.table
+          thead
+            tr
+              th ID
+              th Capacidad
+              th Ocupado
+              th Id reserva
+              th Acciones
+          tbody
+            each table in tables
+              tr
+                td #{table._id}
+                td #{table.capacity}
+                td
+                  if table.occupied === 0
+                    | Libre
+                  else if table.occupied === 1
+                    | Reservada
+                  else if table.occupied === 2
+                    | Ocupada
+                  else
+                    | No disponible
+                td #{table.reservation_id}
+               
+                td.btn-container
+                  a.btn(href=`/tables/detail-table/${table._id}`) Ver
+                  | 
+                  a.btn(href=`/tables/update-table/${table._id}`) Actualizar
+                  | 
+                  a.btn(href=`/tables/delete/${table._id}` onclick="return confirm('¿Estás seguro de que deseas eliminar esta mesa?');") Eliminar

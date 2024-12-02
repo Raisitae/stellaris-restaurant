@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/styles.css")
+
+  body
+    block content
+      .container
+        .card
+          h1 Detalles de la Reserva
+          p
+            strong ID: 
+            | #{reservation._id}
+          p
+            strong Apellido: 
+            | #{reservation.last_name}
+          p
+            strong Fecha: 
+            | #{reservation.date}
+          p
+            strong Hora: 
+            | #{reservation.hour}
+          p
+            strong Huéspedes: 
+            | #{reservation.guests}
+          p
+            strong Estado: 
+              if reservation.status === 0
+                | No confirmada
+              else if reservation.status === 1
+                | Confirmada
+              else if reservation.status === 2
+                | Cancelada
+              else
+                | No disponible
+          p
+            strong Hecha por: 
+            | #{reservation.made_by}
+            //a.btn(href=`/reservations/all-reservations/`) Volver
+

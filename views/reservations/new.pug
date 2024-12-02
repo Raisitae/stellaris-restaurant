@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title Crear Nueva Reserva
+    link(rel="stylesheet", href="/styles.css")
+  body
+    block content
+      .container
+        .card
+          h1 Crear Nueva Reserva
+          form(action="/reservations/created", method="POST")
+            // ID: no es necesario incluirlo ya que se generará automáticamente
+            div
+              label(for="last_name") Apellido
+              input(type="text", name="last_name", id="last_name", required)
+            div
+              label(for="name") Nombre
+              input(type="text", name="name", id="name", required)
+            div
+              label(for="date") Fecha
+              input(type="date", name="date", id="date", required)
+            div
+              label(for="hour") Hora
+              input(type="time", name="hour", id="hour", required)
+            div
+              label(for="guests") Huéspedes
+              input(type="number", name="guests", id="guests", required)
+            // Campo oculto para 'made_by'. Cuando autentiquemos con sesiones aqui se guardara el valor
+            input(type="hidden", name="made_by", value="")
+            div
+              button(type="submit") Crear Reserva

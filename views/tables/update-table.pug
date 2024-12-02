@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/styles.css")
+
+  body
+    block content
+      .container
+        .card
+          h1 Modificar Mesa
+          form(action=`/tables/updated-table/${table._id}`, method="POST") 
+            // ID: no editable
+            p
+              strong ID: 
+              | #{table._id}
+            // Campos editables
+            div
+              label(for="capacity") Capacidad
+              input(type="number", name="capacity", id="capacity", value=table.capacity, required)
+            div
+              label(for="occupied") Estado de Ocupación
+              select(name="occupied", id="occupied", required)
+                option(value="0", selected=table.occupied === 0) Libre
+                option(value="1", selected=table.occupied === 1) Reservada
+                option(value="2", selected=table.occupied === 2) Ocupada
+            div
+              label(for="reservation_id") ID de Reserva
+              input(type="text", name="reservation_id", id="reservation_id", value=table.reservation_id, required)
+            div
+              button(type="submit") Guardar Cambios

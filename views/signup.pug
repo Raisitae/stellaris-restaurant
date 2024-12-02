@@ -1,0 +1,31 @@
+extends layouts/main
+
+block content
+  h1 Registrar Cuenta
+
+  // If there's an error message (flash message)
+  if message
+  .alert.alert-danger
+    | #{message}  
+
+  form(action="/login/register", method="POST")
+    div
+      label(for="username") Nombre de Usuario:
+      input(type="text", id="username", name="username", required)
+    div
+      label(for="user_type") Tipo de Usuario:
+      select(id="user_type", name="user_type", required)
+        option(value="cliente") Cliente
+        option(value="empleado") Empleado
+        option(value="admin") Admin
+    div
+      label(for="password") Contraseña:
+      input(type="password", id="password", name="password", required)
+    div
+      label(for="confirm_password") Confirmar Contraseña:
+      input(type="password", id="confirm_password", name="confirm_password", required)
+    div
+      button(type="submit") Registrar
+    div
+      a.btn(href='/login/signup') Iniciar sesión
+

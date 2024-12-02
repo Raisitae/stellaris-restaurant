@@ -1,0 +1,22 @@
+extends layouts/main
+
+block content
+  h1 Iniciar Sesión
+
+  // If there's an error message (flash message)
+  if message
+  .alert.alert-danger
+    | #{message}  
+
+  form(action="/login", method="POST")
+    div
+      label(for="username") Usuario:
+      input(type="text", id="username", name="username", required)
+    div
+      label(for="password") Contraseña:
+      input(type="password", id="password", name="password", required)
+    div
+      button(type="submit") Iniciar Sesión
+      div
+      a.btn(href='/login/signup') Registrarse
+

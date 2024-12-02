@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box; /* Ensure padding and borders are included in width/height */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%; /* Full width of the form */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%; /* Full width of the form */
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: start; /* Centra verticalmente */
+  margin-top: 8rem;
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos el alto de la pantalla */
+}
+
+.card {
+  max-width: 700px; /* Ancho máximo del card */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra para efecto de profundidad */
+  text-align: center; /* Centra el texto */
+}
+
+.container p {
+  font-size: 1.2em; /* Tamaño de fuente */
+  line-height: 1.5; /* Espaciado entre líneas */
+  margin-bottom: 15px; /* Espaciado entre párrafos */
+}
+
+.btn {
+  display: inline-block; /* Botón como bloque en línea */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none; /* Sin subrayado */
+  text-align: center;
+  width: 100%;
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+
+.container-dashboard {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  width: 50rem;
+}
+
+/* Table Styles */
+.table-container {
+  margin: 20px auto; /* Center the table */
+  max-width: 800px; /* Maximum width of the table container */
+}
+
+.table {
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse; /* Merge borders */
+  background-color: white; /* Background color of the table */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.table th,
+.table td {
+  padding: 12px; /* Padding inside table cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Border between rows */
+}
+
+.table th {
+  background-color: #007bff; /* Header background color */
+  color: white; /* Header text color */
+}
+
+.table tr:hover {
+  background-color: #f1f1f1; /* Background color on hover */
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block; /* Make buttons inline-block */
+  padding: 8px 15px; /* Button padding */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* No underline */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}
+
+.btn-container {
+  display: flex; /* Use Flexbox for layout */
+  gap: 10px; /* Space between buttons */
+}
+
+.card {
+  max-width: 600px; /* Width of the card */
+  margin: 20px auto; /* Center the card */
+  padding: 20px; /* Padding inside the card */
+  background-color: white; /* Background color of the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  text-align: left; /* Align text to the left */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .table-container {
+    padding: 0 10px; /* Add padding on smaller screens */
+  }
+
+  .table th,
+  .table td {
+    font-size: 14px; /* Adjust font size on smaller screens */
+  }
+}
+
+/* Basic Alert Style */
+.alert {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Danger Alert (Error) Style */
+.alert.alert-danger {
+  text-align: center;
+  color: #721c24; /* Dark red text color */
+}
+
+/* Optional: Make the alert more responsive */
+@media (max-width: 576px) {
+  .alert {
+    font-size: 14px;
+  }
+}

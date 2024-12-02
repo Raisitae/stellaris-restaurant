@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Buscar Reserva por Apellido
+    link(rel="stylesheet" href="/styles.css")
+    script.
+      function updateFormAction() {
+        const lastnameInput = document.getElementById('lastname');
+        const form = document.getElementById('searchForm');
+        form.action = `/reservations/last-name/${lastnameInput.value}`;
+      }
+  body
+    .container
+      .card
+        h1 Buscar Reserva por Apellido
+        form#searchForm(method="GET" onsubmit="updateFormAction()")
+          div
+            label(for="lastname") Apellido:
+            input(type="text" name="lastname" id="lastname" class="form-input" required)
+          div
+            button(type="submit" class="btn btn-primary") Buscar Reserva por Apellido

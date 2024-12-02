@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/styles.css")
+  
+  body
+    block content
+      h1 Todas las Reservas
+      .table-container
+        table.table
+          thead
+            tr
+              th ID
+              th Apellido
+              th Nombre
+              th Fecha
+              th Hora
+              th Huéspedes
+              th Acciones
+          tbody
+            each reservation in reservations
+              tr
+                td #{reservation._id}
+                td #{reservation.last_name}
+                td #{reservation.name}
+                td #{reservation.date}
+                td #{reservation.hour}
+                td #{reservation.guests}
+                td.btn-container
+                  a.btn(href=`/reservations/detail-reservation/${reservation._id}`) Ver
+                  | 
+                  a.btn(href=`/reservations/update-reservation/${reservation._id}`) Actualizar
+                  | 
+                  a.btn(href=`/reservations/delete/${reservation._id}` onclick="return confirm('¿Estás seguro de que deseas eliminar esta reserva?');") Eliminar

@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/styles.css")
+
+  body
+    block content
+      .container
+        .card
+          h1 Detalles de la Mesa
+          p
+            strong ID: 
+            | #{table._id}
+          p
+            strong Capacidad: 
+            | #{table.capacity}
+          p
+            strong Estado de Ocupación: 
+              if table.occupied === 0
+                | Libre
+              else if table.occupied === 1
+                | Reservada
+              else if table.occupied === 2
+                | Ocupada
+              else
+                | No disponible
+          p
+            strong ID de Reserva: 
+            | #{table.reservation_id}
+            a.btn(href=`/tables/all-tables/`) Volver
+
+           
